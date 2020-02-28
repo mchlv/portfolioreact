@@ -1,0 +1,48 @@
+// shortcuts
+$bg: 'bg';
+$text: 'text';
+$cstext: 'cstext';
+$hero: 'hero';
+$link: 'link';
+$hover: 'hover';
+$logo: 'logo';
+$line: 'line';
+
+// theme variables
+$themes: (
+        default: (
+                // logo: url("../assets/logodark.svg"),
+                bg: $lightgrey,
+                line: $dark,
+                hero: $light,
+                text: $dark,
+                link: $dark,
+                cstext: $dark
+        ),
+        dark: (
+                // logo: url("../assets/logolight.svg"),
+                bg: $grey,
+                line: $light,
+                hero: $dark,
+                text: $light,
+                link: $light,
+                cstext: $dark
+        ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key)};

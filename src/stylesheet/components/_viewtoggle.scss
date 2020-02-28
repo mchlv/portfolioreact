@@ -1,0 +1,23 @@
+.viewToggle {
+  position: relative;
+  margin: 10rem 10rem 10rem 10rem;
+  img {
+    max-width: 4%;
+  }
+  p {
+    @include uppercase;
+    font-weight: 600;
+    margin-top: 2%;
+  }
+  input {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

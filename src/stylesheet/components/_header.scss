@@ -1,0 +1,156 @@
+@import 'globals', 'colortheme';
+.header {
+  @include sm {
+    .logoMobile {
+      display: none;
+    }
+  }
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  // nav
+  .mobileNav {
+    display: none;
+    @include sm {
+      display: block;
+      :first-child {
+        margin-top: 30%;
+      }
+      :nth-child(3){
+        margin-top: 30%;
+      }
+      li {
+        float: left;
+        width: 33%;
+        a {
+          @include paragraph;       
+        }
+      }
+      img {
+        max-width: 100%;
+        padding: 0;
+      }
+    }
+  }
+  ul {
+    padding: 1.5rem;
+    @include sm {
+      padding: 0;
+      display: none;
+    }
+    li {
+      list-style: none;
+      float: left;
+      a {
+        @include paragraph;
+        margin: 1rem;
+        // color: $dark;
+      }
+    }
+  }
+  .logo {
+    padding: 1.5rem;
+    max-width: 22%;
+    float: right;
+  }
+}
+
+.aboveTheFold {
+  // background: $lightgrey;
+  height: 100vh;
+  .header {
+    @include sm {
+      .logoMobile {
+        display: block;
+        max-width: 40%;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      .logo {
+        display: none;
+      }
+    }
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    // nav
+    .mobileNav {
+      display: none;
+      @include sm {
+        display: block;
+        :first-child {
+          margin-top: 30%;
+        }
+        :nth-child(3){
+          margin-top: 30%;
+        }
+        li {
+          float: left;
+          width: 33%;
+          a {
+            @include paragraph;       
+          }
+        }
+        img {
+          max-width: 100%;
+          padding: 0;
+        }
+      }
+    }
+    ul {
+      padding: 1.5rem;
+      @include sm {
+        padding: 0;
+        display: none;
+      }
+      li {
+        list-style: none;
+        float: left;
+        a {
+          @include paragraph;
+          margin: 1rem;
+          // color: $dark;
+        }
+      }
+    }
+    .logo {
+      padding: 1.5rem;
+      max-width: 22%;
+      float: right;
+    }
+  }
+  // hero content
+  .hero {
+    padding-top: 18%;
+    position: relative;
+    .blurb {
+      h1 {
+        @include heading;
+      }
+      p {
+        margin-top: 8%;
+        @include paragraphlg;
+      }
+    }
+    .light {
+      max-width: 90%;
+      display: block;
+    }
+    .dark {
+      max-width: 70%;
+      display: none;
+    }
+  }
+  .line {
+    .heroLine {
+      position: relative;
+      margin-right: 20rem;
+      margin-top: 5rem;
+      width: .2rem;
+      height: 52vh;
+      // background: $dark;
+    }
+  }
+}
