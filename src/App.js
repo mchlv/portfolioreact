@@ -9,7 +9,7 @@ import Home from './containers/Home/HomePage/HomePage';
 import ScrollToTop from './components/ScrollToTop';
 import NavItem from './components/Nav/NavItem';
 import logo from './logo.png';
-import './App.scss';
+
  
 import 'animate.css/animate.css';
 import {
