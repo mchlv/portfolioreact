@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Redirect from './containers/CaseStudies/Redirect';
+import RedirectApp from './containers/CaseStudies/RedirectApp';
 import RunGo from './containers/CaseStudies/RunGo';
 import ZCircle from './containers/CaseStudies/ZCircle';
 import CMS from './containers/CaseStudies/CMS';
@@ -9,12 +9,11 @@ import Home from './containers/Home/HomePage/HomePage';
 import ScrollToTop from './components/ScrollToTop';
 import NavItem from './components/Nav/NavItem';
 import logo from './logo.png';
-
- 
 import 'animate.css/animate.css';
 import {
   BrowserRouter as Router,
-  Switch,
+  Redirect,
+  HashRouter,
   Route,
   Link
 } from "react-router-dom";
@@ -30,20 +29,25 @@ export default class App extends Component {
     };
 
     this.changeTheme = this.changeTheme.bind(this);
-}
+  }
 
-changeTheme() {
-    this.setState({ dark: !this.state.dark });
-}
+    changeTheme() {
+        this.setState({ dark: !this.state.dark });
+    }
+
+    setHome() {
+      console.log("Hello!");
+
+      
+    }
 
   render() {
     return (
+      <HashRouter>
       <div>
         <div id="themeToggle" className={'theme ' + (this.state.dark ? 'theme--dark' : 'theme--default')}>
           <div className='base'>            
-            
-                <Router onUpdate={() => window.scrollTo(0, 0)}></Router>
-            
+              {/* <Router onUpdate={() => window.scrollTo(0, 0)}></Router> */}
                 <Router>
                 <header className="row header">
                   <nav className="col-lg-6 col-sm-12">
@@ -60,13 +64,15 @@ changeTheme() {
                     </div>
                   </nav>
                   <div className="col-lg-6">
-                    <Link to="/index"><img src={logo} alt="Michelle Vettese Design & Development Logo" className="logo" /></Link>
+                    <Link to="/"><img src={logo} alt="Michelle Vettese Design & Development Logo" className="logo" /></Link>
                   </div>
                 </header>
                   <ScrollToTop/>
-                  <Route path="/index" component={Home} />
+  
+                  {/* <Redirect exact from="/" to="home" /> */}
+                  <Route exact path="/" component={Home} />
                   <Route path="/about" component={About} />
-                  <Route path="/redirect" component={Redirect} />
+                  <Route path="/redirect" component={RedirectApp} />
                   <Route path="/rungo" component={RunGo} />
                   <Route path="/zcircle" component={ZCircle} />
                   <Route path="/cms" component={CMS} />
@@ -75,6 +81,7 @@ changeTheme() {
           </div> 
         </div>
       </div>
+      </HashRouter>
       
     );
   }

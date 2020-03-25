@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Redirect.css';
 import Footer from '../../../components/Footer/Footer';
 
-class Redirect extends Component {
+class RedirectApp extends Component {
   render() {
     return (
 
@@ -167,4 +167,4 @@ class Redirect extends Component {
   }
 }
 
-export default Redirect;
+export default RedirectApp;
