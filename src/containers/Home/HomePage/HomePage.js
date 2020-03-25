@@ -5,25 +5,37 @@ import ListView from '../../../components/List/ListView';
 import GridView from '../../../components/Grid/GridView';
 import Footer from '../../../components/Footer/Footer';
 
+
+const Checkbox = props => (
+  <input type="checkbox" {...props} />
+)
+
+// styled component for icon toggle
+// const Icon = styled.svg`
+//   
+// `
+
 class HomePage extends Component {
 
 // write a function here - if work view checkbox = true, render ListView, else render GridView
-state = { checked: false }
-
-handleCheckboxChange = event =>
-    this.setState({ checked: event.target.checked })
-
 constructor(props) {
   super(props);
 
-  const Checkbox = props => (
-    <input type="checkbox" checked={this.state.checked}onChange={this.handleCheckboxChange}  name="toggleGrid" id="toggleGrid" {...props} />
-  )
-    
+  this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+  this.state = { isChecked: false };
 }
 
+handleCheckboxChange = event =>
+this.setState({ isChecked: event.target.checked })
 
   render() {
+    const isChecked = this.state.checked;
+    if (this.state.isChecked) {
+      console.log("Should render grid view")
+    } else {
+      console.log("Should render list view")
+    }
+
     return (
       <div className="mainContainer">
       <section className="container-fluid aboveTheFold">
@@ -34,17 +46,19 @@ constructor(props) {
       </section>
 
       <div className="viewToggle">
-            <img src="assets/grid.png" alt="" />
-            <p>View As Grid</p>
-            
-            <input type="checkbox"  name="toggleGrid" id="toggleGrid" />
+        <img src="assets/grid.png" alt="" />
+        <p>View As Grid</p>
+        
+        <Checkbox
+          checked={this.state.isChecked}
+          onChange={this.handleCheckboxChange} name="toggleGrid" id="toggleGrid"
+        />
       </div>
 
-
-      <workView></workView>
-      {/* <ListView></ListView>
-
-      <GridView></GridView> */}
+      {this.state.isChecked
+        ? <GridView/>
+        : <ListView/>
+      }
 
       <Footer></Footer>
 </div>

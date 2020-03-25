@@ -12,7 +12,6 @@ import logo from './logo.png';
 import 'animate.css/animate.css';
 import {
   BrowserRouter as Router,
-  Redirect,
   HashRouter,
   Route,
   Link
@@ -69,7 +68,7 @@ export default class App extends Component {
                 </header>
                   <ScrollToTop/>
   
-                  {/* <Redirect exact from="/" to="home" /> */}
+                  {/* Route paths */}
                   <Route exact path="/" component={Home} />
                   <Route path="/about" component={About} />
                   <Route path="/redirect" component={RedirectApp} />
