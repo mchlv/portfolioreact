@@ -11,8 +11,8 @@ class NavItem extends Component {
   render() {
     return (
         <ul>
+          <a href="#contact"><li><p>let's work together</p></li></a>
          <Link to="/about"><li><p>get to know me</p></li></Link>
-          <a href="#contact"><li><p>work with me</p></li></a>
         </ul>
     );
   }

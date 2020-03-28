@@ -4,16 +4,27 @@ import HeroItem from '../../../components/Hero/HeroItem';
 import ListView from '../../../components/List/ListView';
 import GridView from '../../../components/Grid/GridView';
 import Footer from '../../../components/Footer/Footer';
+import { faList, faGripHorizontal } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
+// define checkbox to render
 const Checkbox = props => (
   <input type="checkbox" {...props} />
 )
 
-// styled component for icon toggle
-// const Icon = styled.svg`
-//   
-// `
+let views = {
+  "view" : [
+    {
+      "title" : "View as Grid",
+      "url" : "assets/grid.png"
+    },
+    {
+      "title" : "View as List",
+      "url" : "assets/list.png"
+    }
+  ]
+}
 
 class HomePage extends Component {
 
@@ -21,12 +32,18 @@ class HomePage extends Component {
 constructor(props) {
   super(props);
 
+  // defining state of checkbox and onChange function
   this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-  this.state = { isChecked: false };
+  this.state = { 
+    isChecked: false 
+  };
 }
 
+// this function handles the change event when checkbox is clicked
 handleCheckboxChange = event =>
-this.setState({ isChecked: event.target.checked })
+this.setState({ 
+  isChecked: event.target.checked 
+})
 
   render() {
     const isChecked = this.state.checked;
@@ -38,30 +55,38 @@ this.setState({ isChecked: event.target.checked })
 
     return (
       <div className="mainContainer">
-      <section className="container-fluid aboveTheFold">
-        <HeroItem></HeroItem>
-        <section className="row line justify-content-center">
-          <div className="heroLine drawLine"></div>
+        <section className="container-fluid aboveTheFold">
+          <HeroItem></HeroItem>
+          <section className="row line justify-content-center">
+            <div className="heroLine drawLine"></div>
+          </section>
         </section>
-      </section>
 
-      <div className="viewToggle">
-        <img src="assets/grid.png" alt="" />
-        <p>View As Grid</p>
-        
-        <Checkbox
-          checked={this.state.isChecked}
-          onChange={this.handleCheckboxChange} name="toggleGrid" id="toggleGrid"
-        />
+        <div className="viewToggle">
+
+{/* COME BACK TO THIS - DRY!! */}
+          {/* ternary for changing toggle icon & text */}
+          {this.state.isChecked ?
+           <FontAwesomeIcon icon={faList} size="2x" /> : <FontAwesomeIcon icon={faGripHorizontal} size="2x" />
+          }
+          {this.state.isChecked ?
+            <p>{views.view[1].title}</p> : <p>{views.view[0].title}</p>
+          }
+
+          {/* checkbox render */}
+          <Checkbox
+            checked={this.state.isChecked}
+            onChange={this.handleCheckboxChange} name="toggleGrid" id="toggleGrid"
+          />
+        </div>
+
+        {this.state.isChecked
+          ? <GridView/>
+          : <ListView/>
+        }
+
+        <Footer></Footer>
       </div>
-
-      {this.state.isChecked
-        ? <GridView/>
-        : <ListView/>
-      }
-
-      <Footer></Footer>
-</div>
     );
   }
 }

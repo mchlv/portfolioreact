@@ -62,7 +62,7 @@ class ListView extends Component {
           </div>
         </section>
 
-        <section className="row justify-content-center  no-gutters">
+        <section className="row justify-content-center no-gutters">
           <div className="col-lg-2 projectTitle">
             <h1>Web App</h1>
             <p>Content Management System</p>

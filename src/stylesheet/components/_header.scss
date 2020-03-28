@@ -1,127 +1,37 @@
 @import 'globals', 'colortheme';
 .header {
-  @include sm {
-    .logoMobile {
-      display: none;
-    }
-  }
   position: absolute;
   top: 0;
   z-index: 1;
   width: 100%;
+  
   // nav
-  .mobileNav {
-    display: none;
-    @include sm {
-      display: block;
-      :first-child {
-        margin-top: 30%;
-      }
-      :nth-child(3){
-        margin-top: 30%;
-      }
-      li {
-        float: left;
-        width: 33%;
-        a {
-          @include paragraph;       
-        }
-      }
-      img {
-        max-width: 100%;
-        padding: 0;
-      }
-    }
-  }
   ul {
-    padding: 1.5rem;
-    @include sm {
-      padding: 0;
-      display: none;
-    }
+    padding-top: 1.8rem;
     li {
       list-style: none;
-      float: left;
+      float: right;
+      margin-left:1rem;
+      margin-right: 1rem;
       a {
         @include paragraph;
-        margin: 1rem;
-        // color: $dark;
+        margin: 4rem;
       }
     }
   }
   .logo {
-    padding: 1.5rem;
-    max-width: 22%;
-    float: right;
+    padding: 2rem;
+    max-width: 26%;
+    @include sm {
+      max-width: 40%;
+      float: none;
+      padding: 0;
+    }
   }
 }
 
 .aboveTheFold {
-  // background: $lightgrey;
   height: 100vh;
-  .header {
-    @include sm {
-      .logoMobile {
-        display: block;
-        max-width: 40%;
-        margin: 0 auto;
-        padding: 1rem;
-      }
-      .logo {
-        display: none;
-      }
-    }
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    // nav
-    .mobileNav {
-      display: none;
-      @include sm {
-        display: block;
-        :first-child {
-          margin-top: 30%;
-        }
-        :nth-child(3){
-          margin-top: 30%;
-        }
-        li {
-          float: left;
-          width: 33%;
-          a {
-            @include paragraph;       
-          }
-        }
-        img {
-          max-width: 100%;
-          padding: 0;
-        }
-      }
-    }
-    ul {
-      padding: 1.5rem;
-      @include sm {
-        padding: 0;
-        display: none;
-      }
-      li {
-        list-style: none;
-        float: left;
-        a {
-          @include paragraph;
-          margin: 1rem;
-          // color: $dark;
-        }
-      }
-    }
-    .logo {
-      padding: 1.5rem;
-      max-width: 22%;
-      float: right;
-    }
-  }
-  // hero content
   .hero {
     padding-top: 18%;
     position: relative;
@@ -137,6 +47,10 @@
     .light {
       max-width: 90%;
       display: block;
+      @include sm {
+        max-width: 20%;
+        margin-top: 20%;
+      }
     }
     .dark {
       max-width: 70%;

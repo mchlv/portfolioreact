@@ -16,11 +16,8 @@ $(document).ready(function(){
       $(".logo").attr("src", "assets/logolight.svg");
       $(".light").attr("src", "assets/moon.svg");
       $(".darkLightToggle").html("Light Mode").css("color", "white");
-      
     }
     $(this).data("clicks", !clicks);
   });
-  
-
   
 });

@@ -1,13 +1,18 @@
 .viewToggle {
   position: relative;
-  margin: 10rem 10rem 10rem 10rem;
+  margin: 5rem 2rem 4rem 10rem;
+  span {
+    height: 10px;
+    width: 10px;
+    color: red;
+  }
   img {
     max-width: 4%;
   }
   p {
     @include uppercase;
     font-weight: 600;
-    margin-top: 2%;
+    margin-top: .2rem;
   }
   input {
     width: 100px;

@@ -11,7 +11,6 @@ $line: 'line';
 // theme variables
 $themes: (
         default: (
-                // logo: url("../assets/logodark.svg"),
                 bg: $lightgrey,
                 line: $dark,
                 hero: $light,
@@ -20,7 +19,6 @@ $themes: (
                 cstext: $dark
         ),
         dark: (
-                // logo: url("../assets/logolight.svg"),
                 bg: $grey,
                 line: $light,
                 hero: $dark,

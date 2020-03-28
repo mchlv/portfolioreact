@@ -12,14 +12,11 @@ class HeroItem extends Component {
   render() {
     return (
       <section className="row justify-content-center hero">
-         <div className="col-lg-1">
-          {/* onclick function firing */}
-           {/* <input type="button" onClick={() => console.log('worked')}/> */}           
+         <div className="col-lg-1">       
           <Animate appear="fadeInUp"
           durationAppear={1600}
           component="div">
             <img src="assets/light.png" alt="Dark Mode Toggle" className="light"  /></Animate>
-        {/* <div className="attentionPulse shadow-pulse"></div> */}
       </div>
       <div className="col-lg-4 blurb">
         <Animate appear="fadeIn"
