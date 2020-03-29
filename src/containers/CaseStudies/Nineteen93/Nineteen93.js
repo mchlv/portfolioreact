@@ -31,7 +31,7 @@ class Nineteen93 extends Component {
                     </p>
                 </div>
                 <div class="horline col-lg-1"></div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 role">
                     <h2>Role</h2>
                     <ul>
                         <li>UX Research</li>

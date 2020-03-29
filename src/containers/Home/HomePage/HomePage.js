@@ -8,6 +8,7 @@ import { faList, faGripHorizontal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
+
 // define checkbox to render
 const Checkbox = props => (
   <input type="checkbox" {...props} />
@@ -26,6 +27,7 @@ let views = {
   ]
 }
 
+
 class HomePage extends Component {
 
 // write a function here - if work view checkbox = true, render ListView, else render GridView
@@ -37,6 +39,13 @@ constructor(props) {
   this.state = { 
     isChecked: false 
   };
+}
+
+handleScroll = e => {
+  let element = e.target
+  if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+    console.log("you scrollin'")
+  }
 }
 
 // this function handles the change event when checkbox is clicked
@@ -80,8 +89,10 @@ this.setState({
           />
         </div>
 
+
+  {/* to do: if on mobile screen, display grid view */}
         {this.state.isChecked
-          ? <GridView/>
+          ? <GridView onScroll={this.handleScroll}/>
           : <ListView/>
         }
 

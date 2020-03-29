@@ -89,14 +89,7 @@ p a h1 h2 h3 {
   height: 100%;
   margin-top: 6%;
   padding: 4rem;
-  ul {
-    padding-left: 0;
-    li {
-      list-style: none;
-      padding-left: 0;
-      @include paragraph;
-    }
-  }
+ 
 }
 
 .horline {
@@ -120,16 +113,23 @@ p a h1 h2 h3 {
   }
 }
 
-
-// toggle
+.sideHeader {
+  @include sm {
+    position: relative;
+  }
+  // toggle
 .toggle-button-cover
 {
     position: relative;
     width: 10px;
     height: 10px;
     box-sizing: border-box;
+    @include sm {
+      position: absolute;
+      top: 1rem;
+      left: 16rem;
+    }
 }
-
 .button-cover
 {
     height: 100px;
@@ -254,6 +254,7 @@ p a h1 h2 h3 {
     background-color: $darkgrey;
     border: 2px solid $light;
 }
+}
 
 // toggle
 
@@ -281,19 +282,42 @@ p a h1 h2 h3 {
 }
 
 header {
-  li {
-    p {
-      color: $dark;
-      margin-left: 1rem;
-      @include paragraph;
-      font-weight: bold;
-      @include themed() {
-        color: t($link);
+  ul {
+    padding-top: 1.8rem;
+    @include sm {
+      width: 100%;
+       padding: 0;
+       margin: 0;
+
+    }
+    li {
+      list-style: none;
+      float: right;
+      margin-left:1rem;
+      margin-right: 1rem;
+      @include sm {
+        text-align:center;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      p {
+        color: $dark;
+        margin-left: 1rem;
+        @include paragraph;
+        font-weight: bold;
+        @include themed() {
+          color: t($link);
+        }
+        @include sm {
+         @include mobilelink;
+         margin-left: 0;
+         margin-right: .4rem;
+        }
       }
     }
-  }
-  .darkLightToggle {
-    margin-left: 2.5rem;
+    .darkLightToggle {
+      margin-left: 2.5rem;
+    }
   }
 }
 

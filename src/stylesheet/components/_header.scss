@@ -4,28 +4,13 @@
   top: 0;
   z-index: 1;
   width: 100%;
-  
-  // nav
-  ul {
-    padding-top: 1.8rem;
-    li {
-      list-style: none;
-      float: right;
-      margin-left:1rem;
-      margin-right: 1rem;
-      a {
-        @include paragraph;
-        margin: 4rem;
-      }
-    }
-  }
   .logo {
     padding: 2rem;
     max-width: 26%;
     @include sm {
-      max-width: 40%;
-      float: none;
-      padding: 0;
+      margin: 0 auto;
+      max-width: 55%;
+      // float: none;
     }
   }
 }
@@ -35,21 +20,33 @@
   .hero {
     padding-top: 18%;
     position: relative;
+    @include sm {
+      padding-top: 60%;
+    }
     .blurb {
       h1 {
         @include heading;
+        @include sm {
+          &:first-of-type {
+            margin-top: 2rem;
+          }
+          @include mobileheading;
+          padding: 1rem 1rem 0rem 1rem;
+        }
       }
       p {
         margin-top: 8%;
         @include paragraphlg;
+        @include sm {
+          @include mobileparagraph;
+          padding: 0rem 1rem 0rem 1rem;        }
       }
     }
     .light {
       max-width: 90%;
       display: block;
       @include sm {
-        max-width: 20%;
-        margin-top: 20%;
+        display: none;
       }
     }
     .dark {

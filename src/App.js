@@ -11,6 +11,11 @@ import NavItem from './components/Nav/NavItem';
 import logo from './logo.png';
 import 'animate.css/animate.css';
 
+// FONT AWESOME
+import { FaMobileAlt, faGripHorizontal } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+///////////////
+
 import {
   BrowserRouter as Router,
   HashRouter,
@@ -20,6 +25,8 @@ import {
 
 // create a class 
 export default class App extends Component {
+
+  
 
   constructor(props) {
     super(props);
@@ -31,9 +38,9 @@ export default class App extends Component {
     this.changeTheme = this.changeTheme.bind(this);
   }
 
-    changeTheme() {
-        this.setState({ dark: !this.state.dark });
-    }
+  changeTheme() {
+      this.setState({ dark: !this.state.dark });
+  }
 
   render() {
     return (
@@ -44,6 +51,7 @@ export default class App extends Component {
           {/* onUpdate={() => window.scrollTo(0, 0)} */}
               <Router >
                 <header className="row header">
+                  {/* <FontAwesome */}
                 <div className="col-lg-6 col-sm-6 sideHeader">
                     <Link to="/"><img src={logo} alt="Michelle Vettese Design & Development Logo" className="logo" /></Link>
 
@@ -60,7 +68,7 @@ export default class App extends Component {
                     {/* theme toggle */}
 
                   </div>
-                  <nav className="col-lg-6 col-sm-2">
+                  <nav className="col-lg-6 col-sm-6">
                     <NavItem></NavItem>
                   </nav>
                 </header>
