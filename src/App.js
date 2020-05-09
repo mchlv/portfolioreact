@@ -37,12 +37,10 @@ export default class App extends Component {
     this.changeTheme = this.changeTheme.bind(this);
   }
 
-
   // on checkbox toggle, set the dark state to true which is changing the theme from theme--default to theme--dark, and set the checkbox state to true which is setting the value of the checkbox to 'checked' and putting the toggle button in the correct position
   changeTheme() {
       this.setState({ dark: !this.state.dark, checked: !this.state.checked });
   }
-
 
   // on DOM load, if night time, set theme to dark and checkbox to checked
   componentDidMount() {
@@ -60,10 +58,7 @@ export default class App extends Component {
 
   componentDidUpdate() {
     console.log("it updated");
-
   }
-
-  
 
   render() {
     return (

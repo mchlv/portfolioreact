@@ -6,7 +6,20 @@ import 'animate.css/animate.css';
 class HeroItem extends Component {
   constructor(props){
     super(props);
-    this.state = {};
+    
+    let symbols = {
+      "symbol" : [
+        {
+          "title" : "Day",
+          "url" : "assets/light.png"
+        },
+        {
+          "title" : "Night",
+          "url" : "assets/moon.svg"
+        }
+      ]
+    }
+    
   }
 
   render() {
