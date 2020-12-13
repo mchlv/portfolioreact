@@ -11,8 +11,8 @@ class GridView extends Component {
 
   render() {
     return (
-      <main className="container workGrid">
-  <section className="row">
+  <main className="container workGrid">
+    <section className="row">
     <div className="col-lg-4">
     <Link to="/redirect" style={{ textDecoration: 'none' }}>
       <img src="assets/redirecthumbsm.png" alt="" />

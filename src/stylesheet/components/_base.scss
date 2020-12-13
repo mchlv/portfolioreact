@@ -259,10 +259,9 @@ p a h1 h2 h3 {
 // toggle
 
 .workGrid {
-  &:hover {
-    text-decoration: none;
-    // color: red;
-  }
+// &:hover {
+//   background: red;
+// }
   p {
     color: $dark;
     @include themed() {
@@ -270,13 +269,36 @@ p a h1 h2 h3 {
     }
   }
   h4 {
-    color: $dark;
+    // color: $dark;
     font-weight: bold;
     &:hover {
       text-decoration: none;
     }
     @include themed() {
       color: t($text);
+    }
+  }
+}
+
+.workList {
+  h4 {
+    @include themed() {
+      color: t($text);
+      border: 2px solid t($text);
+    }
+    text-align: center;
+    border-radius: .30rem;
+    padding: .5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    transition: .2s all ease;
+    &:hover {
+    // background: red;
+      @include themed() {
+        background: t($link);
+        color: t($bg);
+      }
     }
   }
 }
@@ -321,35 +343,85 @@ header {
   }
 }
 
-footer {
-  background: $lightgrey;
-  @include themed() {
-    background: t($hero);
-  }
-  padding: 3rem;
-  margin-top: 10rem;
-  // margin-bottom: 5rem;
-  text-align: center;
-  h3 {
-    @include uppercase;
-    font-weight: 600;
-  }
-  img {
-    max-width: 10%;
-    padding: .5rem;
-  }
-  a {
-    @include paragraph;
-    color: $dark;
-    &:hover {
-      text-decoration: none;
+  footer {
+    @include sm {
+    height: 100vh;
+    padding: 1rem;
     }
+    background: $lightgrey;
     @include themed() {
-      color: t($link);
+      background: t($hero);
+    }
+    padding: 8rem;
+    margin-top: 10rem;
+    // margin-bottom: 5rem;
+    // text-align: center;
+    h3 {
+      // @include uppercase;
+      font-weight: 600;
+    }
+    img {
+      max-width: 10%;
+      padding: .5rem;
+    }
+    a {
+      @include paragraph;
+      color: $dark;
+      &:hover {
+        text-decoration: none;
+      }
+      @include themed() {
+        color: t($link);
+      }
+    }
+    p {
+      @include paragraph;
+    }
+    .contact {
+    // background: red;
+      @include sm {
+        margin-top: 50%;
+        padding: 3rem;
+      }
+      padding: 4rem;
+      border-radius: 1rem;
+
+      form {
+        margin: 0 auto;
+      input, textarea {
+        @include sm {
+          width: 100%;
+        }
+        width: 100%;
+        padding: .5rem;
+        margin-top: 4%;
+        border: 0px;
+        border-radius: .3rem;
+      }  
+      input {
+        height: 2.5rem;
+      }
+      textarea {
+        height: 10rem;
+      }
+      input[type="submit"] {
+        // background: red;
+        font-weight: 600;
+        border-radius: .3rem;
+        transition: .5s ease all;
+        @include themed()
+        {
+          background: t($text);
+          color: t($bg);
+        }
+        &:hover {
+          @include themed() {
+            background: t($bg);
+            color: t($text);
+          }
+        }
+        }
+      }
     }
   }
-  p {
-    @include paragraph;
-  }
-}
 }

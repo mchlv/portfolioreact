@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ListView.css';
 import ScrollAnimation from 'react-animate-on-scroll';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,11 +28,11 @@ class ListView extends Component {
           <div className="col-lg-2 blurb">
             <h1>01.</h1>
             <p>Here is the brief desc of the project. It will only be two sentences so choose the right words carefully.</p>
-            <Link to="/redirect">View Case Study</Link>
+            <Link to="/redirect" style={{ textDecoration: 'none' }}> <h4>View Case Study</h4></Link>
           </div>
         </section>
 
-        <section className="row justify-content-center  no-gutters">
+        <section className="row justify-content-center  no-gutters" >
           <div className="col-lg-2 projectTitle">
             <h1>Mobile App</h1>
             <p>ZCircle</p>
@@ -41,8 +42,8 @@ class ListView extends Component {
           </div>
           <div className="col-lg-2 blurb">
             <h1>02.</h1>
-            <p>Here is the brief desc of the project. It will only be two sentences so choose the right words carefully.</p>
-            <Link to="/zcircle">View Case Study</Link>
+            <p>ZCircle is a mobile shopping app concept that bridges the gap  between online shopping and ethical consumerism.</p>
+            <Link to="/zcircle" style={{ textDecoration: 'none' }}><h4>View Case Study</h4></Link>
           </div>
         </section>
   
@@ -56,8 +57,8 @@ class ListView extends Component {
           </div>
           <div className="col-lg-2 blurb">
             <h1>03.</h1>
-            <p>Here is the brief desc of the project. It will only be two sentences so choose the right words carefully.</p>
-            <Link to="/rungo">View Case Study</Link>
+            <p>With RunGo's focus on community and wellness ,,,</p>
+            <Link to="/rungo" style={{ textDecoration: 'none' }}><h4>View Case Study</h4></Link>
           </div>
         </section>
 
@@ -72,7 +73,7 @@ class ListView extends Component {
           <div className="col-lg-2 blurb">
             <h1>04.</h1>
             <p>Here is the brief desc of the project. It will only be two sentences so choose the right words carefully.</p>
-            <Link to="/cms">View Case Study</Link>
+            <Link to="/cms" style={{ textDecoration: 'none' }}><h4>View Case Study</h4></Link>
           </div>
         </section>
   
@@ -87,7 +88,7 @@ class ListView extends Component {
           <div className="col-lg-2 blurb">
             <h1>05.</h1>
             <p>Here is the brief desc of the project. It will only be two sentences so choose the right words carefully.</p>
-            <Link to="/nineteen93">View Case Study</Link>
+            <Link to="/nineteen93" style={{ textDecoration: 'none' }}><h4>View Case Study</h4></Link>
           </div>
         </section>
       </main>

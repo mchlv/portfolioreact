@@ -27,6 +27,8 @@ class ZCircle extends Component {
                 <div class="col-lg-4">
                     <h2>Summary</h2>
                     <p>
+
+            <img src="assets/zcirclemockuphero.png" />
                     The concept of this project was identifying a problem that a fellow student experiences in an interview with them. In the interview, I explored different areas of their academic life where they could face problems —this allowed me to design an app customized to meet the users specific needs.
                     </p>
                 </div>

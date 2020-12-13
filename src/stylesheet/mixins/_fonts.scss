@@ -33,6 +33,30 @@
 }
 
 
+@mixin button {
+  @include themed() {
+    color: t($text);
+    border: 2px solid t($text);
+  }
+  width: 5rem;
+  text-align: center;
+  border-radius: .30rem;
+  padding: .5rem;
+  margin: 6rem .25rem 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  // margin-left: 1rem;
+  transition: .2s all ease;
+  &:hover {
+    // background: red;
+      @include themed() {
+        background: t($text);
+        color: t($bg);
+      }
+    }
+}
+
+
 @mixin buttonDark {
   text-transform: uppercase;
   background: $dark;

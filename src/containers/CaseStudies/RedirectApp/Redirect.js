@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import './Redirect.css';
 import Footer from '../../../components/Footer/Footer';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 class RedirectApp extends Component {
   render() {
@@ -31,20 +37,20 @@ class RedirectApp extends Component {
                     </p>
                 </div>
                 <div class="horline col-lg-1"></div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 role">
                     <h2>Role</h2>
                     <ul>
                         <li>UX Research</li>
                         <li>Interface Design</li>
                         <li>Hi-Fi Prototype</li>
-                        <li class="skip"><a href="d">Skip To Conclusion</a></li>
-                        {/* <li class="demo"><a href="d">View App Demo</a></li> */}
+                        <li class="skip"><Link to="d" style={{ textDecoration: 'none' }} >Skip To Conclusion</Link></li>
+                        <li class="skip"><Link to="d" style={{ textDecoration: 'none' }}>View Demo</Link></li>
                     </ul>
                 </div>
             </div>
         </main>
 
-        <main class="container explanation">
+        {/* <main class="container explanation">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <h2>Getting To The Problem</h2>
@@ -158,8 +164,8 @@ class RedirectApp extends Component {
                 <img src="assets/redirect_locked.png" alt="" />
                 <img src="assets/redirect_emerg.png" alt="" />
             </div>
-        </div>
-    </main>
+        </div> */}
+    {/* </main> */}
     <Footer></Footer>
   </div>
 

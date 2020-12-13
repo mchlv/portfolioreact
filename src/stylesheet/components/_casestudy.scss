@@ -11,7 +11,7 @@
   .aboveTheFold {
     .caseStudyHero {
       img {
-        max-width: 90%;
+        max-width: 92%;
         @include sm {
           max-width: 100%;
           padding: 0;
@@ -48,22 +48,37 @@
       width: 4rem;
       transform: rotate(-90deg);
       margin-left: 5%;
+      @include themed() {
+        background: t($text);
+      }
     }
-    .col-lg-3 {
+    .role{
       margin-left: 5%;
-      .skip {
-        margin-bottom: 2.5rem;
-        margin-top: 2rem;
-        a {
-          @include buttonLight;
+      ul {
+        // background: red;
+        @include paragraph;
+        padding: 0;
+        li {
+          list-style: none;
+          &:nth-child(4) {
+            margin-top: 6%;
+          }
+          &:nth-child(5) {
+            margin-top: 8%;
+          }
+          a {
+            @include button;
+          }
+
+          .demo {
+            a {
+              @include buttonDark;
+            }
+            
+          }
         }
       }
-      .demo {
-        a {
-          @include buttonDark;
-        }
-        
-      }
+
     }
   }
   ///////

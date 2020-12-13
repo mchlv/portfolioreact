@@ -11,6 +11,9 @@ import NavItem from './components/Nav/NavItem';
 import logo from './logo.png';
 import 'animate.css/animate.css';
 
+import{ init } from 'emailjs-com';
+
+
 // FONT AWESOME
 import { FaMobileAlt, faGripHorizontal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,6 +28,7 @@ import {
 
 // create a class 
 export default class App extends Component {
+  
 
   constructor(props) {
     super(props);
@@ -44,12 +48,15 @@ export default class App extends Component {
 
   // on DOM load, if night time, set theme to dark and checkbox to checked
   componentDidMount() {
+
+    init("user_3wZulnSZFZBT5v0FR9DUV");
+
     const hour = new Date().getHours();
     const night = hour < 6 || hour >= 19;
 
     if (night) {
       this.setState({ dark: !this.state.dark, checked: !this.state.checked });
-      console.log(this.state.checked)
+      // console.log(this.state.checked)
     } 
     // else {
     //   this.setState({ dark: this.state.dark, checked: !this.state.checked });
@@ -57,8 +64,9 @@ export default class App extends Component {
   }
 
   componentDidUpdate() {
-    console.log("it updated");
+    // console.log("it updated");
   }
+  
 
   render() {
     return (

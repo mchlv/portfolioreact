@@ -6,6 +6,10 @@ import GridView from '../../../components/Grid/GridView';
 import Footer from '../../../components/Footer/Footer';
 import { faList, faGripHorizontal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  BrowserView,
+  MobileView
+} from "react-device-detect";
 
 // define checkbox to render
 const Checkbox = props => (
@@ -36,6 +40,11 @@ constructor(props) {
   this.state = { 
     checked: false 
   };
+
+
+  this.state = {
+    isMobile: false
+  }
 }
 
 handleScroll = e => {
@@ -46,10 +55,12 @@ handleScroll = e => {
 }
 
 // this function handles the change event when checkbox is clicked
-handleCheckboxChange = event =>
+handleCheckboxChange = e =>
 this.setState({ 
-  checked: event.target.checked 
+  checked: e.target.checked 
 })
+
+
 
   render() {
     // const checked = this.state.checked;
@@ -87,11 +98,13 @@ this.setState({
         </div>
 
 
-  {/* to do: if on mobile screen, display grid view only */}
+        {/* to do: if on mobile screen, display grid view only */}
         {this.state.checked
           ? <GridView onScroll={this.handleScroll}/>
           : <ListView/>
         }
+
+        <MobileView><GridView></GridView></MobileView>
 
         <Footer></Footer>
       </div>
